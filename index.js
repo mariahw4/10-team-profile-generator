@@ -5,61 +5,50 @@ const fs = require("fs");
 const generateHTML = require("./src/generateHTML");
 const generateCSS = require("./src/generateCSS");
 
-// const Employee = require("./lib/Employee");
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+// const employee = require("./lib/Employee");
+// const manager = require("./lib/Manager");
+// const engineer = require("./lib/Engineer");
+// const intern = require("./lib/Intern");
 
-const employeeQuestions = [
+const questions = [
     {
       type: 'input',
       message: 'What is your name?',
-      name: 'employeeName',
+      name: 'managerName',
     },
     {
       type: 'input',
       message: 'What is your id?',
-      name: 'employeeId',
+      name: 'managerId',
     },
     {
       type: 'input',
       message: 'What is your email?',
-      name: 'employeeEmail',
+      name: 'managerEmail',
     },
     {
-    type: "list",
-    message: "What is your role?",
-    name: "employeeRole",
-    choices: ["Engineer", "Manager", "Intern"], 
+      type: "input",
+      message: "What is your office number?",
+      name: "managerOfficeNumber",
+    },
+    {
+      type: "list",
+      message: "What is your role?",
+      name: "employeeRole",
+      choices: ["Engineer", "Manager", "Intern"], 
     },   
-// ]
-// if (data.employeeRole === "Manager") {
-//     const managerQuestions = [
-        {
-            type: "input",
-            message: "What is your office number?",
-            name: "officeNumber",
-        },
-//     ]
-// }
-// if (data.employeeRole === "Engineer") {
-//     const engineerQuestions = [
-        {
-            type: "input",
-            message: "What is your github username?",
-            name: "employeeGithub",
-        },
-//     ]
-// }
-// if (data.employeeRole === "Intern") {
-//     const internQuestions = [
-        {
-            type: "input",
-            message: "What school do you attend?",
-            name: "employeeSchool",
-        },
+    {
+      type: "input",
+      message: "What is your github username?",
+      name: "employeeGithub",
+    },
+
+    {
+      type: "input",
+      message: "What school do you attend?",
+      name: "employeeSchool",
+    },
     ]
-// }  
 function getName(value) {
     return `${value}`
 }
@@ -104,18 +93,14 @@ function writeToFile(fileName, data) {
   }
 
   function init() {
-    // Employee();
-    // Manager();
-    // Engineer();
-    // Intern();
-    inquirer.prompt(employeeQuestions).then((data) => {
+    inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, " "));
-        data.getName = getName(data.employeeName);
-        data.getId = getId(data.employeeId);
-        data.getEmail = getEmail(data.employeeEmail);
+        data.getName = getName(data.managerName);
+        data.getId = getId(data.managerId);
+        data.getEmail = getEmail(data.managerEmail);
         data.getRole = getRole(data.employeeRole);
         data.getGithub = getGithub(data.employeeGithub);
-        data.getOfficeNumber = getOfficeNumber(data.officeNumber);
+        data.getOfficeNumber = getOfficeNumber(data.managerOfficeNumber);
         data.getSchool = getSchool(data.employeeSchool);
         writeToFile("./dist/index.html", data);
         writeToStyle("./dist/style.css", data);

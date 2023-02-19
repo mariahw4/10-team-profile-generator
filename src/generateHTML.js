@@ -16,21 +16,98 @@ function generateHTML(data) {
       <h1>My Team</h1>
     </header>
 
-    <section>
-        <div>
-            <h2>Employee Name ${data.employeeName}</h2>
-            <h3>Employee Role ${data.employeeRole} </h3>
+    <section class="employee-card">
+        <div class="card-header">
+            <h2>${data.managerName}</h2>
+            <h2>${data.employeeRole} </h2>
         </div>
 
-        <div>
+        <div class="card-body">
             <ul>
-                <li>ID</li>
-                <li>Email</li>
-                <li> github or office number </li>
+                <li>ID: ${data.managerId} </li>
+                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
+                <li> Office number: ${data.managerOfficeNumber}</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="employee-card">
+        <div class="card-header">
+            <h2>${data.managerName}</h2>
+            <h2>${data.employeeRole} </h2>
+        </div>
+
+        <div class="card-body">
+            <ul>
+                <li>ID ${data.managerId} </li>
+                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
+                <li>Office number: ${data.managerOfficeNumber}</li>
             </ul>
         </div>
 
     </section>
+
+    <section class="employee-card">
+        <div class="card-header">
+            <h2>${data.managerName}</h2>
+            <h2>${data.employeeRole} </h2>
+        </div>
+
+        <div class="card-body">
+            <ul>
+                <li>ID ${data.managerId} </li>
+                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
+                <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
+            </ul>
+        </div>
+
+    </section>
+    <section class="employee-card">
+        <div class="card-header">
+            <h2>${data.managerName}</h2>
+            <h2>${data.employeeRole} </h2>
+        </div>
+
+        <div class="card-body">
+            <ul>
+                <li>ID ${data.managerId} </li>
+                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
+                <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
+            </ul>
+        </div>
+
+    </section>
+    <section class="employee-card">
+        <div class="card-header">
+            <h2>${data.managerName}</h2>
+            <h2>${data.employeeRole} </h2>
+        </div>
+
+        <div class="card-body">
+            <ul>
+                <li>ID ${data.managerId} </li>
+                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
+                <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
+            </ul>
+        </div>
+
+    </section>
+    <section class="employee-card">
+        <div class="card-header">
+            <h2>${data.managerName}</h2>
+            <h2>${data.employeeRole} </h2>
+        </div>
+
+        <div class="card-body">
+            <ul>
+                <li>ID ${data.managerId} </li>
+                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
+                <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
+            </ul>
+        </div>
+
+    </section>
+    
 
     
   </body>
