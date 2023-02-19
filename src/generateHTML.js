@@ -57,7 +57,7 @@ function generateHTML(data) {
             <ul class="list-style">
                 <li>ID ${data.managerId} </li>
                 <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
-                <li>Github: <a href="https://github.com/${data.employeeGithub}" target="blank">${data.employeeGithub}</a></li>
+                <li>Github: <a href="https://github.com/${data.employeeGithub}" target="_blank">${data.employeeGithub}</a></li>
             </ul>
         </div>
 
