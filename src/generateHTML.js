@@ -23,7 +23,7 @@ function generateHTML(data) {
         </div>
 
         <div class="card-body">
-            <ul>
+            <ul class="list-style">
                 <li>ID: ${data.managerId} </li>
                 <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
                 <li> Office number: ${data.managerOfficeNumber}</li>
@@ -38,8 +38,8 @@ function generateHTML(data) {
         </div>
 
         <div class="card-body">
-            <ul>
-                <li>ID ${data.managerId} </li>
+            <ul class="list-style">
+                 <li>ID ${data.managerId} </li>
                 <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
                 <li>Office number: ${data.managerOfficeNumber}</li>
             </ul>
@@ -54,7 +54,22 @@ function generateHTML(data) {
         </div>
 
         <div class="card-body">
-            <ul>
+            <ul class="list-style">
+                <li>ID ${data.managerId} </li>
+                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
+                <li>Github: <a href="https://github.com/${data.employeeGithub}" target="blank">${data.employeeGithub}</a></li>
+            </ul>
+        </div>
+
+    </section>
+    <section class="employee-card">
+        <div class="card-header">
+            <h2>${data.managerName}</h2>
+            <h2>${data.employeeRole} </h2>
+        </div>
+
+        <div class="card-body">
+            <ul class="list-style">
                 <li>ID ${data.managerId} </li>
                 <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
                 <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
@@ -69,7 +84,7 @@ function generateHTML(data) {
         </div>
 
         <div class="card-body">
-            <ul>
+            <ul class="list-style">
                 <li>ID ${data.managerId} </li>
                 <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
                 <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
@@ -84,22 +99,7 @@ function generateHTML(data) {
         </div>
 
         <div class="card-body">
-            <ul>
-                <li>ID ${data.managerId} </li>
-                <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
-                <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
-            </ul>
-        </div>
-
-    </section>
-    <section class="employee-card">
-        <div class="card-header">
-            <h2>${data.managerName}</h2>
-            <h2>${data.employeeRole} </h2>
-        </div>
-
-        <div class="card-body">
-            <ul>
+            <ul class="list-style">
                 <li>ID ${data.managerId} </li>
                 <li>Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></li>
                 <li> github ${data.employeeGithub} or office number ${data.managerOfficeNumber}</li>
