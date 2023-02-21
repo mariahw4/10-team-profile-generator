@@ -12,8 +12,8 @@ function generateCSS(data) {
     
     .employee-card {
         border: 2px solid black;
-        width:max-content;
-        height:250px;
+        width: 200px;
+        height: 275px;
         float: left;
         margin: 4px;
         padding: 4px;
