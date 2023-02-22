@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const jest = require("jest");
 const fs = require("fs");
 
 const generateHTML = require("./src/generateHTML");
@@ -11,7 +10,6 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 const employees = [];
-
 
 const managerProfile = function() {
     return inquirer.prompt([
@@ -40,8 +38,6 @@ const managerProfile = function() {
     const { name, id, email, officeNumber } = managerData;
     const manager = new Manager(name, id, email, officeNumber);
     employees.push(manager);
-   
-  
 })
 };
 
@@ -54,28 +50,26 @@ const addTeamMembers = function() {
       choices: ["Engineer", "Intern"], 
     },   
     {
-        type: 'input',
-        message: 'What is the name of the employee?',
-        name: 'name',
+      type: 'input',
+      message: 'What is the name of the employee?',
+      name: 'name',
     },
     {
-        type: 'input',
-        message: 'What is the ID of the employee?',
-        name: 'id',
-      },
-      {
-        type: 'input',
-        message: 'What is the email of the employee?',
-        name: 'email',
-      },
-
+      type: 'input',
+     message: 'What is the ID of the employee?',
+      name: 'id',
+    },
+    {
+      type: 'input',
+      message: 'What is the email of the employee?',
+      name: 'email',
+    },
     {
       type: "input",
       message: "What is the github username of the employee?",
       name: "github",
       when: (input) => input.role === 'Engineer',
     },
-
     {
       type: "input",
       message: "What school does the Intern attend?",
@@ -83,10 +77,10 @@ const addTeamMembers = function() {
       when: (input) => input.role === 'Intern',
     },
     {
-        type: 'confirm',
-        name: 'confirmAddEmployee',
-        message: 'Would you like to add another employee?',
-        default: false
+      type: 'confirm',
+      name: 'confirmAddEmployee',
+      message: 'Would you like to add another employee?',
+      default: false
     }
     ])
     .then(employeesData => {
@@ -105,9 +99,7 @@ const addTeamMembers = function() {
         if(confirmAddEmployee) {
             return addTeamMembers(employees)
         } else {
-            // console.log(employees);
-            return employees;
-            
+            return employees;    
         }
     })
 }
@@ -115,84 +107,23 @@ const addTeamMembers = function() {
 managerProfile()
 .then(addTeamMembers)
 .then(data => {
-    const pageHTML = generateHTML(data)
-    const pageCSS = generateCSS(data)
+    const writeHTML = generateHTML(data)
+    const writeCSS = generateCSS(data)
 
-    fs.writeFile('./dist/index.html', pageHTML, err => {
+    fs.writeFile('./dist/index.html', writeHTML, err => {
         if (err) {
             console.log(err);
             return;
         } else {
-            console.log("Page created! Check out index.html")
+            console.log("Check out index.html")
         }
     })
-    fs.writeFile('./dist/style.css', pageCSS, err => {
+    fs.writeFile('./dist/style.css', writeCSS, err => {
         if (err) {
             console.log(err);
             return;
         } else {
-            console.log("Page created! Check out style.css")
+            console.log("Check out style.css")
         }
     })
 });
-// function getName(value) {
-//     return `${value}`
-// }
-
-// function getId(value) {
-//     return `${value}`
-// }
-
-// function getEmail(value) {
-//     return `${value}`
-// }
-
-// function getRole(value) {
-//     return `${value}`
-// };
-
-// function getGithub(value) {
-//     return `${value}`
-// }
-
-// function getOfficeNumber(value) {
-//     return `${value}`
-// }
-
-// function getSchool(value) {
-//     return `${value}`
-// }
-
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, generateHTML(data), function (err) {
-//         if (err) {
-//             return console.log(err);
-//         }
-//     });
-//   }
-//   function writeToStyle(fileName, data) {
-//     fs.writeFile(fileName, generateCSS(data), function (err) {
-//         if (err) {
-//             return console.log(err);
-//         }
-//     });
-//   }
-
-//   function init() {
-//     inquirer.prompt(questions).then((data) => {
-//         console.log(JSON.stringify(data, null, " "));
-//         data.getName = getName(data.managerName);
-//         data.getId = getId(data.managerId);
-//         data.getEmail = getEmail(data.managerEmail);
-//         data.getRole = getRole(data.employeeRole);
-//         data.getGithub = getGithub(data.employeeGithub);
-//         data.getOfficeNumber = getOfficeNumber(data.managerOfficeNumber);
-//         data.getSchool = getSchool(data.employeeSchool);
-//         writeToFile("./dist/index.html", data);
-//         writeToStyle("./dist/style.css", data);
-//   }
-//     )};
-  
-  
-//   // // Function call to initialize app
-//   init();
