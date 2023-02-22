@@ -1,0 +1,27 @@
+
+
+    header {
+        background-color: rgb(214, 85, 85);
+        color: white;
+        height: 80px;
+    }
+
+    .navbar {
+        justify-content: center !important;
+    }
+
+    .card {
+        border: 2px solid black;
+        max-width: 300px;
+        width: max-content;
+        height: auto;
+        float: left;
+        margin: 4px;
+    }
+    
+    .card-body {
+        background-color: rgb(56, 99, 180);
+        color: white;
+        text-align: left;
+    }
+    
