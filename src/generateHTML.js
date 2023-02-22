@@ -1,16 +1,16 @@
 const managerCard = (data) => {
     return `
-    <section class="employee-card">
-        <div class="card-header">
-            <h2>${data.name}</h2>
-            <h3> ☕ Manager </h3>
+    <section class="card m-2">
+        <div class="card-body">
+            <h2 class="card-title">${data.name}</h2>
+            <h4 class="card-subtitle mb-2"> ☕ Manager </h4>
         </div>
 
-        <div class="card-body">
-            <ul class="list-style">
-                <li>ID: ${data.id} </li>
-                <li>Email: <a href="mailto:${data.email}">${data.email}</a></li>
-                <li> Office number: ${data.officeNumber}</li>
+        <div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: ${data.id} </li>
+                <li class="list-group-item">Email: <a href="mailto:${data.email}">${data.email}</a></li>
+                <li class="list-group-item"> Office number: ${data.officeNumber}</li>
             </ul>
         </div>
     </section>`
@@ -18,17 +18,17 @@ const managerCard = (data) => {
 
 const engineerCard = (data) => {
     return `
-    <section class="employee-card">
-        <div class="card-header">
-            <h2>${data.name}</h2>
-            <h3> 🛠️ Engineer </h3>
+    <section class="card m-2">
+        <div class="card-body">
+            <h2 class="card-title">${data.name}</h2>
+            <h4 class="card-subtitle mb-2"> 🛠️ Engineer </h4>
         </div>
 
-        <div class="card-body">
-            <ul class="list-style">
-                <li>ID: ${data.id} </li>
-                <li>Email: <a href="mailto:${data.email}">${data.email}</a></li>
-                <li>Github: <a href="https://github.com/${data.github}" target="_blank" rel="noopener noreferrer">${data.github}</a></li>
+        <div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: ${data.id} </li>
+                <li class="list-group-item">Email: <a href="mailto:${data.email}">${data.email}</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${data.github}" target="_blank" rel="noopener noreferrer">${data.github}</a></li>
             </ul>
         </div>
     </section>`
@@ -36,17 +36,17 @@ const engineerCard = (data) => {
 
 const internCard = (data) => {
     return `
-    <section class="employee-card">
-        <div class="card-header">
-            <h2>${data.name}</h2>
-            <h3> 📚 Intern </h3>
+    <section class="card m-2">
+        <div class="card-body">
+            <h2 class="card-title">${data.name}</h2>
+            <h4 class="card-subtitle mb-2"> 📚 Intern </h4>
          </div>
 
-        <div class="card-body">
-             <ul class="list-style">
-                <li>ID: ${data.id} </li>
-                <li>Email: <a href="mailto:${data.email}">${data.email}</a></li>
-                <li>School: ${data.school}</li>
+        <div>
+             <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: ${data.id} </li>
+                <li class="list-group-item">Email: <a href="mailto:${data.email}">${data.email}</a></li>
+                <li class="list-group-item">School: ${data.school}</li>
              </ul>
         </div>
     </section>`
@@ -54,21 +54,21 @@ const internCard = (data) => {
 };
 
 const cards = data => {
-    var cardInput = '';
-    for (i=0; i < data.length; i ++) {
+    var cardItem = '';
+    for (i=0; i < data.length; i++) {
         console.log(data[i])
         if (data[i].getRole() === 'Manager') {
-            cardInput += managerCard(data[i]);
+            cardItem += managerCard(data[i]);
         }
         else if (data[i].getRole() == 'Engineer') {
-            cardInput += engineerCard(data[i]);
+            cardItem += engineerCard(data[i]);
         }
         else if (data[i].getRole() === 'Intern'){
-            cardInput += internCard(data[i]);
+            cardItem += internCard(data[i]);
         }
     }
-    console.log(cardInput);
-    return cardInput;
+    console.log(cardItem);
+    return cardItem;
    
 }
 
@@ -80,13 +80,13 @@ function generateHTML(data) {
   <head>
     <meta charset="UTF-8">
     <title>Team Info</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
-    <header>
-      <!-- Headers -->
-      <h1>My Team</h1>
+    <header class="navbar">
+      <h1 class="navbar-text">My Team</h1>
     </header>
 
     <main>
