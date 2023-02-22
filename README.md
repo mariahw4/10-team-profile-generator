@@ -4,12 +4,14 @@ Due 2/23/23
 
 My task was to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
 
+The HTML page also has live links to both github and email.  The github profile opens in a new tab and the email opens in mail app with the team member's email in the from section. 
+
 This challenge requires use of the Inquirer and Jest packages to capture prompt answers and run tests. 
 
 ## Usage
 Screenshot and Video walk through
 
-[Walkthough Video](https://drive.google.com/file/d/1oxVNzjxFWhcJ-feafRDttBPyptEXBQD3/view)
+[Walkthough Video](https://drive.google.com/file/d/1Wy8qPW-qCBqGl48ijrFqJBFmN6GLYg88/view)
 
 Screenshot:
 ![Screenshot](./src/images/screenshot.png)
