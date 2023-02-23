@@ -1,6 +1,8 @@
+// packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+// internal modules used in generation of application
 const generateHTML = require("./src/generateHTML");
 const generateCSS = require("./src/generateCSS");
 
@@ -9,8 +11,10 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
+// empty array to store employee info
 const employees = [];
 
+// questions to ask manager first
 const managerProfile = function() {
     return inquirer.prompt([
     {
@@ -60,6 +64,7 @@ const managerProfile = function() {
 })
 };
 
+// questions for all subsequent employees added to list/team
 const addTeamMembers = function() {
     return inquirer.prompt([
     {
@@ -159,6 +164,7 @@ managerProfile()
     const writeHTML = generateHTML(data)
     const writeCSS = generateCSS(data)
 
+    // writing the HTML and CSS pages from the template js files
     fs.writeFile('./dist/index.html', writeHTML, err => {
         if (err) {
             console.log(err);

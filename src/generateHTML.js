@@ -1,3 +1,4 @@
+// creates the HTML for manager
 const managerCard = (data) => {
     return `
     <section class="card m-2">
@@ -16,6 +17,7 @@ const managerCard = (data) => {
     </section>`
 };
 
+// the HTML for any engineer added to the team
 const engineerCard = (data) => {
     return `
     <section class="card m-2">
@@ -34,6 +36,7 @@ const engineerCard = (data) => {
     </section>`
 };
 
+// HTML for any intern added to the team
 const internCard = (data) => {
     return `
     <section class="card m-2">
@@ -53,6 +56,7 @@ const internCard = (data) => {
 
 };
 
+// allows for team members to all be added to the page
 const cards = data => {
     var cardItem = '';
     for (i=0; i < data.length; i++) {
