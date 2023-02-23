@@ -9,7 +9,7 @@ The HTML page also has live links to both github and email.  The github profile 
 This challenge requires use of the Inquirer and Jest packages to capture prompt answers and run tests. 
 
 ## Usage
-Screenshot and Video walk through
+Screenshot and Video walk through:
 
 [Walkthough Video](https://drive.google.com/file/d/1Wy8qPW-qCBqGl48ijrFqJBFmN6GLYg88/view)
 
